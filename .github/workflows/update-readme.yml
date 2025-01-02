@@ -2,7 +2,7 @@ name: Update README Daily
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight UTC
+    - cron: '0 21 * * *' # Runs daily at 9 PM UTC
   workflow_dispatch: # Allows manual triggering
 
 jobs:
@@ -25,5 +25,4 @@ jobs:
           git commit -m "Update README on $(date)"
           git push
         env:
-          # Use GitHub's secure token for authentication
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
